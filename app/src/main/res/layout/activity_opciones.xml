@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚙️ OPCIONES"
+                android:textSize="32sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"/>
+
+            <!-- SECCIÓN PERFIL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👤 PERFIL"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del Jugador"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/editNombreJugador"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe tu nombre"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textColorHint="?attr/colorSecondary"
+                        android:background="?attr/colorPrimary"
+                        android:padding="12dp"
+                        android:textSize="16sp"/>
+
+                    <Button
+                        android:id="@+id/btnGuardarNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guardar Nombre"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#FFD700"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN AUDIO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔊 AUDIO"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <!-- Volumen General -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volumen General"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🔇"
+                            android:textSize="20sp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <SeekBar
+                            android:id="@+id/seekVolumenGeneral"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="70"
+                            android:progressTint="#FFD700"
+                            android:thumbTint="#FFD700"/>
+
+                        <TextView
+                            android:id="@+id/txtVolumenGeneral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70%"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:textSize="16sp"
+                            android:layout_marginStart="10dp"
+                            android:minWidth="45dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <!-- Música de Fondo -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Música de Fondo"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:id="@+id/switchMusica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:thumbTint="?attr/colorPrimary"
+                            android:trackTint="?attr/colorSecondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN JUEGO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="♟️ CONFIGURACIÓN DE JUEGO"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <!-- Tiempo de Partida -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tiempo por Partida"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupTiempo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <RadioButton
+                            android:id="@+id/radio5min"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5 minutos (Blitz)"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:buttonTint="#FFD700"/>
+
+                        <RadioButton
+                            android:id="@+id/radio10min"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10 minutos (Rápido)"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:checked="true"
+                            android:buttonTint="#FFD700"/>
+
+                        <RadioButton
+                            android:id="@+id/radio30min"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="30 minutos (Clásico)"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:buttonTint="#FFD700"/>
+
+                    </RadioGroup>
+
+                    <!-- Mostrar Movimientos Posibles -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mostrar movimientos posibles"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:id="@+id/switchMovimientos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:thumbTint="?attr/colorPrimary"
+                            android:trackTint="?attr/colorSecondary"/>
+                    </LinearLayout>
+
+                    <!-- Vibración -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vibración al mover"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:id="@+id/switchVibracion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:thumbTint="?attr/colorPrimary"
+                            android:trackTint="?attr/colorSecondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN VISUAL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎨 APARIENCIA"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <!-- Tema -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Modo Oscuro"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:id="@+id/switchModoOscuro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:thumbTint="?attr/colorPrimary"
+                            android:trackTint="?attr/colorSecondary"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- BOTONES DE ACCIÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnVolverAtras"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:text="Atrás"
+                    android:textColor="?attr/colorOnPrimary" />
+
+                <Button
+                    android:id="@+id/btnGuardarOpciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guardar y Salir"
+                    android:backgroundTint="#FFD700"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

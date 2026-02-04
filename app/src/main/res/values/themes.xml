@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Ajedrez" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Colores principales en modo CLARO -->
+        <item name="colorPrimary">@color/app1</item>
+        <item name="colorOnPrimary">@color/appContraste</item>
+        <item name="android:windowBackground">@color/app1</item>
+        <item name="android:textColor">@color/appContraste</item>
+        <item name="android:statusBarColor">@color/app1</item>
+        <item name="android:navigationBarColor">@color/app1</item>
+        <item name="colorSecondary">#ADA8A8</item>
+        <item name="colorSurface">#DCD9D9</item>
+
+    </style>
+
+    <style name="Theme.Ajedrez" parent="Base.Theme.Ajedrez" />
+</resources>
